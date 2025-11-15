@@ -11,6 +11,6 @@ async def upload_file(file: UploadFile = File(...)):
         tmp.write(await file.read())
         tmp_path = tmp.name
     
-    text_chunks = process_file(tmp_path)
+    text = process_file(tmp_path)
     os.remove(tmp_path)
-    return {"chunks": text_chunks}
+    return {"text": text}

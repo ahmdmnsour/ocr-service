@@ -20,8 +20,4 @@ def process_file(file_path):
     else:
         raise ValueError("Unsupported file type")
 
-    return chunk_text(text)
-
-def chunk_text(text, chunk_size=20):
-    text = text.strip()
-    return [text[i:i + chunk_size] for i in range(0, len(text), chunk_size)]
+    return text
